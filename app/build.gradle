@@ -1,0 +1,60 @@
+plugins {
+    alias libs.plugins.android.application
+    alias libs.plugins.kotlin.android
+    alias libs.plugins.kotlin.kapt
+    alias libs.plugins.hilt
+}
+
+android {
+    namespace "com.devhomc.videoplayersample"
+    compileSdk libs.versions.compileSdk.get().toInteger()
+
+    defaultConfig {
+        applicationId "com.devhomc.videoplayersample"
+        minSdk libs.versions.minSdk.get().toInteger()
+        targetSdk libs.versions.targetSdk.get().toInteger()
+        versionCode libs.versions.app.versionCode.get().toInteger()
+        versionName libs.versions.app.versionName.get()
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion libs.versions.androidx.compose.compiler.get()
+    }
+}
+
+dependencies {
+    implementation libs.androidx.core
+    implementation libs.androidx.appCompat
+    implementation libs.androidx.activity.compose
+    implementation libs.androidx.lifecycle.viewModel
+    implementation libs.androidx.compose.foundation
+    implementation libs.androidx.compose.ui
+    implementation libs.androidx.compose.preview
+    implementation libs.androidx.compose.material3
+    implementation libs.androidx.media.ui
+    implementation libs.androidx.media.session
+    implementation libs.androidx.media.exoPlayer
+    implementation libs.androidx.window
+    implementation libs.androidx.concurrent.futures
+    implementation libs.hilt.android
+    debugImplementation libs.androidx.compose.tooling
+    kapt libs.androidx.hilt.compiler
+    kapt libs.hilt.compiler
+}

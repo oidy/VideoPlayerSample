@@ -1,0 +1,36 @@
+# Built application files
+*.apk
+*.apks
+*.aab
+
+# Generated files
+bin/
+gen/
+out/
+*/release/output-metadata.json
+*/debug/output-metadata.json
+
+# Gradle files
+.gradle/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Log Files
+*.log
+
+# IntelliJ
+*.iml
+.idea
+
+# Keystore files
+*.jks
+*.keystore
+
+# External native build folder generated in Android Studio 2.2 and later
+.externalNativeBuild
+.cxx/
+
+# Android Profiling
+*.hprof
