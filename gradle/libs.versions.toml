@@ -6,7 +6,7 @@ compileSdk = "33"
 targetSdk = "33"
 minSdk = "23"
 
-android-gradle = "7.2.2"
+android-gradle = "7.3.0"
 kotlin = "1.7.10"
 hilt = "2.42"
 
